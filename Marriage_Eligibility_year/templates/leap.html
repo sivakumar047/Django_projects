@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Year Detection</h2>
+
+<form method="post">
+    {% csrf_token %}
+
+    <label>Year:</label>
+    <input type="number" name="year">
+
+    <button type="submit">Check</button>
+</form>
+
+<h3>{{ result }}</h3>
+
+<a href="/marriage/">Marriage Check</a>
+
+</body>
+</html>
