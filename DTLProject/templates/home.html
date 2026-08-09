@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+{% load mathfilters %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>welcome to templates</h1>
+<h6>printing the data</h6>
+<p>given values are{{ no1 }} and {{ no2 }}</p>
+<h4>operators</h4>
+<p>sum of {{ no1 }} and {{ no2 }} is {{ no1 | add:no2 }}</p>
+<p>sub of {{ no1 }} and {{ no2 }} is {{ no1 | sub:no2 }}</p>
+<p>multiplication of {{ no1 }} and {{ no2 }} is {{ no1 | mul:no2 }}</p>
+<p>div of {{ no1 }} and {{ no2 }} is {{ no1 | div:no2 }}</p>
+<p>mod of {{ no1 }} and {{ no2 }} is {{ no1 | mod:no2 }}</p>
+
+</body>
+</html>
