@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+{% load custom_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>welcome to custom_tags</h1>
+{% make_upper name %} <br>
+{% greet "vignesh" %} <br>
+{% custom_tag_fun %} <br>
+sum of {{ no1 }} and {{ no2 }} is {% add_fun no1 no2 %}<br>
+sum of all elements in list is {{ numbers|list_sum }}<br>
+sum of all elements in list is {{ numbers|even_index_even_sum }}
+
+</body>
+</html>
