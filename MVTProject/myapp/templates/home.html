@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>sample calculator</h1>
+<form method="post">
+    {% csrf_token %}
+number1:<input type="text" name="txtnum1" placeholder="enter number1" value="{{ no1 }}"required><br>
+number2:<input type="text" name="txtnum2" placeholder="enter number2" value="{{ no2 }}"required><br>
+<button type="submit" value="add" name="operation">addition</button>
+<button type="submit" value="mul" name="operation">multiply</button>
+<button type="submit" value="power" name="operation">power</button><br>
+<input type="text" value="{{ res }}" placeholder="see result here">
+    </form>
+<a href="{% url 'about' %}">About</a>
+</body>
+</html>
