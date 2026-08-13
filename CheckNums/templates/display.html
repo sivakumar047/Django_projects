@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even or Odd</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        .box {
+            width: 350px;
+            margin: 100px auto;
+            border: 1px solid gray;
+            padding: 25px;
+        }
+
+        .result {
+            margin-top: 20px;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <p>Number: {{ number }}</p>
+
+    <div class="result">
+
+        {% if number|divisibleby:2 %}
+
+            even
+
+        {% else %}
+
+            odd
+
+        {% endif %}
+
+    </div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Even or Odd</title>
+
+    <style>
+        body {
+            font-family: Arial;
+        }
+
+        .box {
+            width: 350px;
+            margin: 100px auto;
+            border: 1px solid gray;
+            padding: 25px;
+        }
+
+        label {
+            display: inline-block;
+            width: 80px;
+            font-size: 18px;
+        }
+
+        input {
+            width: 150px;
+            padding: 8px;
+        }
+
+        button {
+            margin-top: 20px;
+            padding: 10px 25px;
+            background-color: blue;
+            color: white;
+            border: none;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+
+    <form action="{% url 'display' %}" method="post">
+
+        {% csrf_token %}
+
+        <label>Number:</label>
+
+        <input type="number" name="number" required>
+
+        <br>
+
+        <button type="submit">check</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
