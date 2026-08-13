@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Marriage Eligibility</title>
+
+    <style>
+        table {
+            margin: 100px auto;
+            border: 1px solid gray;
+            padding: 15px;
+        }
+
+        td {
+            padding: 8px;
+        }
+
+        .heading {
+            background-color: #20a5b5;
+            color: white;
+            text-align: center;
+            font-size: 18px;
+            padding: 8px;
+        }
+
+        input, select {
+            width: 150px;
+            height: 25px;
+        }
+
+        .check {
+            background-color: #6255e8;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            font-size: 16px;
+        }
+
+        .result {
+            background-color: #f4df9b;
+            text-align: center;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+
+<form method="post">
+    {% csrf_token %}
+
+    <table>
+
+        <tr>
+            <td colspan="2" class="heading">
+                Marriage eligibility
+            </td>
+        </tr>
+
+        <tr>
+            <td>age:</td>
+            <td>
+                <input type="text" name="age" value="{{ age }}">
+            </td>
+        </tr>
+
+        <tr>
+            <td>gender:</td>
+            <td>
+                <select name="gender">
+                    <option value="">Select</option>
+
+                    <option value="male"
+                        {% if gender == "male" %}selected{% endif %}>
+                        Male
+                    </option>
+
+                    <option value="female"
+                        {% if gender == "female" %}selected{% endif %}>
+                        Female
+                    </option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                <button type="submit" class="check">
+                    check
+                </button>
+            </td>
+        </tr>
+
+        {% if result %}
+        <tr>
+            <td colspan="2" class="result">
+                {{ result }}
+            </td>
+        </tr>
+        {% endif %}
+
+    </table>
+
+</form>
+
+</body>
+</html>
